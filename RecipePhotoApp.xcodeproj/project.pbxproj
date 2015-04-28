@@ -14,6 +14,7 @@
 		2ACDE23C1AEFB50D00B64B36 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACDE23B1AEFB50D00B64B36 /* Images.xcassets */; };
 		2ACDE23F1AEFB50D00B64B36 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACDE23D1AEFB50D00B64B36 /* LaunchScreen.xib */; };
 		2ACDE24B1AEFB50E00B64B36 /* RecipePhotoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE24A1AEFB50E00B64B36 /* RecipePhotoAppTests.m */; };
+		2ACDE2561AEFB64E00B64B36 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE2551AEFB64E00B64B36 /* RecipeCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		2ACDE2441AEFB50E00B64B36 /* RecipePhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipePhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACDE2491AEFB50E00B64B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ACDE24A1AEFB50E00B64B36 /* RecipePhotoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipePhotoAppTests.m; sourceTree = "<group>"; };
+		2ACDE2541AEFB64E00B64B36 /* RecipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewCell.h; sourceTree = "<group>"; };
+		2ACDE2551AEFB64E00B64B36 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				2ACDE23B1AEFB50D00B64B36 /* Images.xcassets */,
 				2ACDE23D1AEFB50D00B64B36 /* LaunchScreen.xib */,
 				2ACDE22E1AEFB50D00B64B36 /* Supporting Files */,
+				2ACDE2541AEFB64E00B64B36 /* RecipeCollectionViewCell.h */,
+				2ACDE2551AEFB64E00B64B36 /* RecipeCollectionViewCell.m */,
 			);
 			path = RecipePhotoApp;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACDE2561AEFB64E00B64B36 /* RecipeCollectionViewCell.m in Sources */,
 				2ACDE2371AEFB50D00B64B36 /* ViewController.m in Sources */,
 				2ACDE2341AEFB50D00B64B36 /* AppDelegate.m in Sources */,
 				2ACDE2311AEFB50D00B64B36 /* main.m in Sources */,
