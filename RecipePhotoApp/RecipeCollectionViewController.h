@@ -1,5 +1,5 @@
 //
-//  RecipeCollectionViewCell.h
+//  RecipeCollectionViewController.h
 //  RecipePhotoApp
 //
 //  Created by Kunwardeep Gill on 2015-04-28.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecipeCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+@interface RecipeCollectionViewController : UICollectionViewController
 
 @end

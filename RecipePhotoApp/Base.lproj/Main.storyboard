@@ -7,7 +7,7 @@
         <!--Recipe Photo-->
         <scene sceneID="Eno-bz-L44">
             <objects>
-                <collectionViewController id="SnY-nE-yIj" sceneMemberID="viewController">
+                <collectionViewController id="SnY-nE-yIj" customClass="RecipeCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lIL-B7-Veb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +31,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="recipeImageView" destination="3Rd-Mx-ovT" id="154-pk-ARf"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
