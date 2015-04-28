@@ -8,7 +8,7 @@
 
 #import "RecipeCollectionViewController.h"
 #import "RecipeCollectionViewCell.h"
-
+#import "RecipeCollectionHeaderView.h"
 
 @interface RecipeCollectionViewController ()
 
@@ -78,6 +78,29 @@ static NSString * const reuseIdentifier = @"Cell";
   cell.recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section] objectAtIndex:indexPath.row]];
     return cell;
 }
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+  
+  UICollectionReusableView *reusableView = nil;
+  
+  if (kind == UICollectionElementKindSectionHeader) {
+    
+    RecipeCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+    
+    NSString *title = [[NSString alloc]initWithFormat:@"Recipe Group #%i",indexPath.section + 1];
+    headerView.titleLabel.text = title;
+    reusableView = headerView;
+  }
+  
+  if (kind == UICollectionElementKindSectionFooter) {
+    UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+    reusableView = footerView;
+  }
+  
+  return reusableView;
+}
+
 
 #pragma mark <UICollectionViewDelegate>
 

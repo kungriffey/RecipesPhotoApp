@@ -10,4 +10,6 @@
 
 @interface RecipeCollectionHeaderView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end
