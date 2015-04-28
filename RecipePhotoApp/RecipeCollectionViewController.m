@@ -40,6 +40,9 @@ static NSString * const reuseIdentifier = @"Cell";
     recipeImages = @[mainDishesImages, drinkDessertImages];
   
   
+    //  Add Sectional Spacing
+  UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+  collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
   
 }
 
