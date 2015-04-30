@@ -136,8 +136,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:
-(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
   if (sharedEnabled) {
     NSString *deSelectedRecipe = [recipeImages[indexPath.section]
@@ -146,7 +145,14 @@ static NSString * const reuseIdentifier = @"Cell";
   }
 }
 
-
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+  if(sharedEnabled) {
+    return NO;
+  } else {
+    return YES;
+  }
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -201,15 +207,17 @@ static NSString * const reuseIdentifier = @"Cell";
     // Remove all items from selectedRecipes array
     [selectedRecipes removeAllObjects];
     
-    // Change the sharing mode to NO
-    shareEnabled = NO;
+    // shareEnable to NO and keep button title Share
+    sharedEnabled = NO;
     self.collectionView.allowsMultipleSelection = NO;
     self.shareButton.title = @"Share";
     [self.shareButton setStyle:UIBarButtonItemStylePlain];
-    } else {
+    }
+  else
+    {
     
       //  shareEnable to yes and change button text to upload
-      shareEnabled = YES;
+      sharedEnabled = YES;
       self.collectionView.allowsMultipleSelection = YES;
       self.shareButton.title = @"Upload";
       [self.shareButton setStyle:UIBarButtonItemStyleDone];
