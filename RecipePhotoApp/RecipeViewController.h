@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface RecipeViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+
+- (IBAction)close:(UIBarButtonItem *)sender;
+
+@property (weak, nonatomic) NSString *recipeImageName;
+
 
 @end

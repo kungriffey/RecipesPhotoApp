@@ -9,6 +9,8 @@
 #import "RecipeCollectionViewController.h"
 #import "RecipeCollectionViewCell.h"
 #import "RecipeCollectionHeaderView.h"
+#import "RecipeViewController.h"
+
 
 @interface RecipeCollectionViewController ()
 
@@ -101,6 +103,17 @@ static NSString * const reuseIdentifier = @"Cell";
   return reusableView;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  if ([segue.identifier isEqualToString:@"showRecipePhoto"]) {
+    NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+    UINavigationController *destinationViewController = segue.destinationViewController;
+    RecipeViewController *recipeViewController = (RecipeViewController *)[destinationViewController.childViewControllers firstObject];
+    NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+    recipeViewController.recipeImageName = [recipeImages[indexPath.section]objectAtIndex:indexPath.row];
+    [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+  }
+}
 
 #pragma mark <UICollectionViewDelegate>
 

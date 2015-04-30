@@ -94,7 +94,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Db-5U-9Ci">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eRT-e4-keY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eRT-e4-keY">
+                            <connections>
+                                <action selector="close:" destination="Sgt-Gg-Uyh" id="RZK-zQ-8fA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeImageView" destination="Btp-gn-DvJ" id="Kwv-IG-t62"/>
