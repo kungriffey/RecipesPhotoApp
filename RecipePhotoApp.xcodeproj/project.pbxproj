@@ -17,6 +17,7 @@
 		2ACDE2561AEFB64E00B64B36 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE2551AEFB64E00B64B36 /* RecipeCollectionViewCell.m */; };
 		2ACDE2591AEFB6C800B64B36 /* RecipeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE2581AEFB6C800B64B36 /* RecipeCollectionViewController.m */; };
 		2ACDE25C1AF00C7800B64B36 /* RecipeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE25B1AF00C7800B64B36 /* RecipeCollectionHeaderView.m */; };
+		2ACDE2C11AF2A02C00B64B36 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE2C01AF2A02C00B64B36 /* RecipeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		2ACDE2581AEFB6C800B64B36 /* RecipeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewController.m; sourceTree = "<group>"; };
 		2ACDE25A1AF00C7800B64B36 /* RecipeCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionHeaderView.h; sourceTree = "<group>"; };
 		2ACDE25B1AF00C7800B64B36 /* RecipeCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionHeaderView.m; sourceTree = "<group>"; };
+		2ACDE2BF1AF2A02C00B64B36 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		2ACDE2C01AF2A02C00B64B36 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				2ACDE2321AEFB50D00B64B36 /* AppDelegate.h */,
+				2ACDE2BF1AF2A02C00B64B36 /* RecipeViewController.h */,
+				2ACDE2C01AF2A02C00B64B36 /* RecipeViewController.m */,
 				2ACDE2331AEFB50D00B64B36 /* AppDelegate.m */,
 				2ACDE2351AEFB50D00B64B36 /* ViewController.h */,
 				2ACDE2361AEFB50D00B64B36 /* ViewController.m */,
@@ -239,6 +244,7 @@
 				2ACDE2591AEFB6C800B64B36 /* RecipeCollectionViewController.m in Sources */,
 				2ACDE2371AEFB50D00B64B36 /* ViewController.m in Sources */,
 				2ACDE2341AEFB50D00B64B36 /* AppDelegate.m in Sources */,
+				2ACDE2C11AF2A02C00B64B36 /* RecipeViewController.m in Sources */,
 				2ACDE2311AEFB50D00B64B36 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

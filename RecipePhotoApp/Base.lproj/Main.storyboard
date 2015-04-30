@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="658" y="300"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe View Controller-->
         <scene sceneID="w8c-P6-vHe">
             <objects>
-                <viewController id="Sgt-Gg-Uyh" sceneMemberID="viewController">
+                <viewController id="Sgt-Gg-Uyh" customClass="RecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="THV-NN-y0u"/>
                         <viewControllerLayoutGuide type="bottom" id="XeB-tV-nhl"/>
@@ -96,6 +96,9 @@
                     <navigationItem key="navigationItem" id="2Db-5U-9Ci">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="eRT-e4-keY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recipeImageView" destination="Btp-gn-DvJ" id="Kwv-IG-t62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmK-mf-hRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
