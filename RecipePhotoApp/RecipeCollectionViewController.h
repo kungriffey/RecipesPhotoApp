@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RecipeCollectionViewController : UICollectionViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+- (IBAction)shareButtonTapped:(UIBarButtonItem *)sender;
 
 @end

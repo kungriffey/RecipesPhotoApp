@@ -69,7 +69,16 @@
                             <outlet property="delegate" destination="SnY-nE-yIj" id="DXX-eF-GIT"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Recipe Photo" id="cXr-qh-GBh"/>
+                    <navigationItem key="navigationItem" title="Recipe Photo" id="cXr-qh-GBh">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="aH3-4S-YlE">
+                            <connections>
+                                <action selector="shareButtonTapped:" destination="SnY-nE-yIj" id="nzI-SZ-zR9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="shareButton" destination="aH3-4S-YlE" id="rrN-D6-0pE"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdv-qQ-4eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
