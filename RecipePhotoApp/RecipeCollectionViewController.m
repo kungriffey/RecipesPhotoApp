@@ -21,6 +21,8 @@
   NSArray *recipeImages;
   NSArray *mainDishesImages;
   NSArray *drinkDessertImages;
+  NSArray *selectedRecipes;
+  BOOL sharedEnabled;
 }
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -45,6 +47,8 @@ static NSString * const reuseIdentifier = @"Cell";
     //  Add Sectional Spacing
   UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
   collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
+  
+  selectedRecipes = [NSMutableArray array];
   
 }
 
@@ -78,6 +82,7 @@ static NSString * const reuseIdentifier = @"Cell";
     RecipeCollectionViewCell *cell = (RecipeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
   cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame"]];
   cell.recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section] objectAtIndex:indexPath.row]];
+  cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame-selected"]];
     return cell;
 }
 
@@ -116,6 +121,21 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  
+  if (sharedEnabled) {
+    //determine selected items
+    NSString *selectedRecipe = [recipeImages [indexPath.section] objectAtIndex:indexPath.row];
+    //Add into array
+    [selectedRecipes addObject:selectedRecipe];
+  }
+}
+
+
+
+
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
