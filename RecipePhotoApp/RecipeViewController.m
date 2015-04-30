@@ -38,12 +38,7 @@
 */
 
 - (IBAction)close:(UIBarButtonItem *)sender {
-}
-
-
-  
-  
-  
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
