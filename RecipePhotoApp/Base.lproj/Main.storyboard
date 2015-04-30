@@ -33,6 +33,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="recipeImageView" destination="3Rd-Mx-ovT" id="154-pk-ARf"/>
+                                    <segue destination="uxC-01-beE" kind="modal" identifier="showRecipePhoto" id="i8h-Vl-9fi"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -43,8 +44,8 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="collection-view-header" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-Ep-bAp">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-0l-ddc">
-                                    <rect key="frame" x="139" y="14" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-0l-ddc">
+                                    <rect key="frame" x="80" y="14" width="160" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -74,6 +75,32 @@
             </objects>
             <point key="canvasLocation" x="658" y="300"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="w8c-P6-vHe">
+            <objects>
+                <viewController id="Sgt-Gg-Uyh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="THV-NN-y0u"/>
+                        <viewControllerLayoutGuide type="bottom" id="XeB-tV-nhl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WjA-ug-dz7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-gn-DvJ">
+                                <rect key="frame" x="10" y="77" width="300" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Db-5U-9Ci">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eRT-e4-keY"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JmK-mf-hRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573" y="302"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dWc-fL-Tv7">
             <objects>
@@ -91,6 +118,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXy-qG-7YT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="126" y="300"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ItD-Gt-0XM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxC-01-beE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="htq-7S-ObT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sgt-Gg-Uyh" kind="relationship" relationship="rootViewController" id="NF6-Ad-80t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brU-Du-eNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="302"/>
         </scene>
     </scenes>
     <resources>
