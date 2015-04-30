@@ -11,6 +11,8 @@
 #import "RecipeCollectionHeaderView.h"
 #import "RecipeViewController.h"
 
+#import <Social/Social.h>
+
 
 @interface RecipeCollectionViewController ()
 
@@ -21,7 +23,7 @@
   NSArray *recipeImages;
   NSArray *mainDishesImages;
   NSArray *drinkDessertImages;
-  NSArray *selectedRecipes;
+  NSMutableArray *selectedRecipes;
   BOOL sharedEnabled;
 }
 
@@ -126,14 +128,23 @@ static NSString * const reuseIdentifier = @"Cell";
   
   if (sharedEnabled) {
     //determine selected items
-    NSString *selectedRecipe = [recipeImages [indexPath.section] objectAtIndex:indexPath.row];
+    NSString *selectedRecipe = [recipeImages [indexPath.section]
+                                objectAtIndex:indexPath.row];
     //Add into array
     [selectedRecipes addObject:selectedRecipe];
   }
 }
 
 
-
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:
+(NSIndexPath *)indexPath
+{
+  if (sharedEnabled) {
+    NSString *deSelectedRecipe = [recipeImages[indexPath.section]
+                                  objectAtIndex:indexPath.row];
+    [selectedRecipes removeObject:deSelectedRecipe];
+  }
+}
 
 
 
@@ -167,5 +178,45 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 - (IBAction)shareButtonTapped:(UIBarButtonItem *)sender {
+  if (sharedEnabled) {
+    // Post selected photos to Facebook
+    if ([selectedRecipes count] > 0) {
+      if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+      {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [controller setInitialText:@"Check out my recipes!"];
+        for (NSString *recipePhoto in selectedRecipes) {
+          [controller addImage:[UIImage imageNamed:recipePhoto]];
+        }
+        [self presentViewController:controller animated:YES completion:nil];
+      }
+    }
+    
+    // Deselect all selected items
+    for(NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems)
+    {
+      [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+    }
+    
+    // Remove all items from selectedRecipes array
+    [selectedRecipes removeAllObjects];
+    
+    // Change the sharing mode to NO
+    shareEnabled = NO;
+    self.collectionView.allowsMultipleSelection = NO;
+    self.shareButton.title = @"Share";
+    [self.shareButton setStyle:UIBarButtonItemStylePlain];
+    } else {
+    
+      //  shareEnable to yes and change button text to upload
+      shareEnabled = YES;
+      self.collectionView.allowsMultipleSelection = YES;
+      self.shareButton.title = @"Upload";
+      [self.shareButton setStyle:UIBarButtonItemStyleDone];
+    }
+
+  
+  
+  
 }
 @end
